@@ -1,0 +1,29 @@
+{
+  "name": "purescript-distributive",
+  "version": "0.0.1",
+  "description": "Distributive Library implmentation for PureScript",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.6",
+    "run-sequence": "^0.3.6",
+    "gulp-purescript": "^0.0.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mankyKitty/purescript-distributive.git"
+  },
+  "keywords": [
+    "purescript",
+    "distributive"
+  ],
+  "author": "Hardy Jones,Sean Chalmers",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mankyKitty/purescript-distributive/issues"
+  },
+  "homepage": "https://github.com/mankyKitty/purescript-distributive"
+}
