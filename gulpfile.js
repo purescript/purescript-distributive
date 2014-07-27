@@ -13,9 +13,9 @@ var paths = {
     ],
     dest: '',
     docs: {
-        'Data.Profunctor': {
+        'Data.Distributive': {
             dest: 'src/Data/README.md',
-            src: 'src/Data/Profunctor.purs'
+            src: 'src/Data/Distributive.purs'
         },
     }
 };
@@ -49,9 +49,9 @@ gulp.task('browser', function() {
     return compile(purescript.psc);
 });
 
-gulp.task('docs-Data.Profunctor', docs('Data.Profunctor'));
+gulp.task('docs-Data.Distributive', docs('Data.Distributive'));
 
-gulp.task('docs', ['docs-Data.Profunctor']);
+gulp.task('docs', ['docs-Data.Distributive']);
 
 gulp.task('watch-browser', function() {
     gulp.watch(paths.src, function() {runSequence('browser', 'docs')});

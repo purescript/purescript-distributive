@@ -1,0 +1,24 @@
+{
+  "name": "purescript-distributive",
+  "version": "0.0.1",
+  "homepage": "https://github.com/mankyKitty/purescript-distributive",
+  "authors": [
+    "Hardy Jones <jones3.hardy@gmail.com> (https://github.com/joneshf)"
+  ],
+  "description": "Distributive type class for PureScript",
+  "keywords": [
+    "purescript",
+    "distributive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "purescript-transformers": "~0.0.4"
+  }
+}
