@@ -1,6 +1,6 @@
 {
   "name": "purescript-distributive",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Distributive Library implmentation for PureScript",
   "main": "gulpfile.js",
   "dependencies": {
