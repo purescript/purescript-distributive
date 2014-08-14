@@ -19,6 +19,6 @@
     "tests"
   ],
   "dependencies": {
-    "purescript-transformers": "~0.0.4"
+    "purescript-transformers": "~0.1.0"
   }
 }
