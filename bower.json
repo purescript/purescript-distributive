@@ -1,23 +1,25 @@
 {
   "name": "purescript-distributive",
-  "version": "0.1.0",
-  "homepage": "https://github.com/mankyKitty/purescript-distributive",
-  "authors": [
-    "Hardy Jones <jones3.hardy@gmail.com> (https://github.com/joneshf)",
-    "John A. De Goes <john@degoes.net> (http://degoes.net)"
-  ],
+  "homepage": "https://github.com/purescript/purescript-distributive",
   "description": "Distributive type class for PureScript",
   "keywords": [
     "purescript",
     "distributive"
+  ],
+  "authors": [
+    "Hardy Jones <jones3.hardy@gmail.com> (https://github.com/joneshf)",
+    "John A. De Goes <john@degoes.net> (http://degoes.net)",
+    "Sean Chalmers <sclhiannan@gmail.com>"
   ],
   "license": "MIT",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
-    "test",
-    "tests"
+    "output",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json"
   ],
   "dependencies": {
     "purescript-transformers": "~0.2.1"
