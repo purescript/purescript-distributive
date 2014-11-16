@@ -1,6 +1,6 @@
 module Data.Distributive where
 
-  import Control.Monad.Identity
+  import Data.Identity (runIdentity, Identity(..))
 
   -- Categorical dual of Traversable
   class (Functor f) <= Distributive f where
