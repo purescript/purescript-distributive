@@ -4,8 +4,10 @@ module Data.Distributive where
 
   -- | Categorical dual of `Traversable`:
   -- |
-  -- | - `distribute` zips an arbitrary collection of containers
-  -- | - `collect` traverses an arbitrary collection of values
+  -- | - `distribute` is the dual of `sequence` - it zips an 
+  -- |   arbitrary collection of containers
+  -- | - `collect` is the dual of `traverse` - it traverses 
+  -- |   an arbitrary collection of values
   class (Functor f) <= Distributive f where
     -- | Default implementation: `distribute = collect id`
     distribute :: forall a g. (Functor g) => g (f a) -> f (g a)

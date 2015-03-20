@@ -12,8 +12,10 @@ class (Functor f) <= Distributive f where
 
 Categorical dual of `Traversable`:
 
-- `distribute` zips an arbitrary collection of containers
-- `collect` traverses an arbitrary collection of values
+- `distribute` is the dual of `sequence` - it zips an 
+  arbitrary collection of containers
+- `collect` is the dual of `traverse` - it traverses 
+  an arbitrary collection of values
 
 #### `cotraverse`
 
