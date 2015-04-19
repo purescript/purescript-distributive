@@ -1,32 +1,15 @@
-# Module Documentation
+# purescript-distributive
 
-## Module Data.Distributive
+[![Build Status](https://travis-ci.org/purescript/purescript-distributive.svg?branch=master)](https://travis-ci.org/purescript/purescript-distributive)
 
-#### `Distributive`
+Distributive typeclass - the categorical dual of `Traversable`.
 
-``` purescript
-class (Functor f) <= Distributive f where
-  distribute :: forall a g. (Functor g) => g (f a) -> f (g a)
-  collect :: forall a b g. (Functor g) => (a -> f b) -> g a -> f (g b)
+## Installation
+
+```
+bower install purescript-distributive
 ```
 
-Categorical dual of `Traversable`:
+## Module documentation
 
-- `distribute` is the dual of `sequence` - it zips an 
-  arbitrary collection of containers
-- `collect` is the dual of `traverse` - it traverses 
-  an arbitrary collection of values
-
-#### `cotraverse`
-
-``` purescript
-cotraverse :: forall a b f g. (Distributive f, Functor g) => (g a -> b) -> g (f a) -> f b
-```
-
-Zip an arbitrary collection of containers and summarize the results
-
-#### `distributiveIdentity`
-
-``` purescript
-instance distributiveIdentity :: Distributive Identity
-```
+[`docs/MODULE.md`](docs/MODULE.md)
