@@ -1,5 +1,7 @@
 module Data.Distributive where
 
+import Prelude
+
 import Data.Identity (runIdentity, Identity(..))
 
 -- | Categorical dual of `Traversable`:
