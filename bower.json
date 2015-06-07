@@ -12,16 +12,21 @@
     "Sean Chalmers <sclhiannan@gmail.com>"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/purescript/purescript-distributive.git"
+  },
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
+    "node_modules",
     "output",
+    "test",
     "bower.json",
     "gulpfile.js",
     "package.json"
   ],
   "dependencies": {
-    "purescript-identity": "~0.4.0"
+    "purescript-identity": "^0.4.0"
   }
 }

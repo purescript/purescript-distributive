@@ -12,4 +12,4 @@ bower install purescript-distributive
 
 ## Module documentation
 
-[`docs/MODULE.md`](docs/MODULE.md)
+- [Data.Distributive](docs/Data.Distributive.md)

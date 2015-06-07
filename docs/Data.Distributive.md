@@ -1,5 +1,3 @@
-# Module Documentation
-
 ## Module Data.Distributive
 
 #### `Distributive`
@@ -17,6 +15,11 @@ Categorical dual of `Traversable`:
 - `collect` is the dual of `traverse` - it traverses
   an arbitrary collection of values
 
+##### Instances
+``` purescript
+instance distributiveIdentity :: Distributive Identity
+```
+
 #### `cotraverse`
 
 ``` purescript
@@ -24,13 +27,5 @@ cotraverse :: forall a b f g. (Distributive f, Functor g) => (g a -> b) -> g (f 
 ```
 
 Zip an arbitrary collection of containers and summarize the results
-
-#### `distributiveIdentity`
-
-``` purescript
-instance distributiveIdentity :: Distributive Identity
-```
-
-
 
 
