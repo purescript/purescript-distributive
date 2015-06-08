@@ -2,6 +2,7 @@ module Data.Distributive where
 
 import Prelude
 
+import Control.Monad.Reader.Trans
 import Data.Identity
 
 -- | Categorical dual of `Traversable`:
@@ -26,4 +27,8 @@ instance distributiveIdentity :: Distributive Identity where
 
 instance distributiveFunction :: Distributive ((->) e) where
   distribute a e = map ($ e) a
+  collect f = distribute <<< map f
+
+instance distributiveReaderT :: (Distributive g) => Distributive (ReaderT e g) where
+  distribute a = ReaderT \e -> collect (flip runReaderT e) a
   collect f = distribute <<< map f
