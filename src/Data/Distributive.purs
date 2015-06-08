@@ -23,3 +23,7 @@ cotraverse ga2b gfa = ga2b <$> distribute gfa
 instance distributiveIdentity :: Distributive Identity where
   distribute gIdb = Identity (runIdentity <$> gIdb)
   collect a2Idb ga = Identity ((runIdentity <<< a2Idb) <$> ga)
+
+instance distributiveFunction :: Distributive ((->) e) where
+  distribute a e = map ($ e) a
+  collect f = distribute <<< map f
