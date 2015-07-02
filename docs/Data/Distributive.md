@@ -18,6 +18,7 @@ Categorical dual of `Traversable`:
 ##### Instances
 ``` purescript
 instance distributiveIdentity :: Distributive Identity
+instance distributiveFunction :: Distributive (Function e)
 ```
 
 #### `cotraverse`
