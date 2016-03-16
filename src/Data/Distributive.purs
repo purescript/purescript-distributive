@@ -1,8 +1,8 @@
 module Data.Distributive where
 
-import Prelude
-
-import Data.Identity (runIdentity, Identity(..))
+import Data.Function (id, ($), (<<<))
+import Data.Functor (class Functor, map)
+import Data.Identity (Identity(..), runIdentity)
 
 -- | Categorical dual of `Traversable`:
 -- |
@@ -10,20 +10,40 @@ import Data.Identity (runIdentity, Identity(..))
 -- |   arbitrary collection of containers
 -- | - `collect` is the dual of `traverse` - it traverses
 -- |   an arbitrary collection of values
-class (Functor f) <= Distributive f where
-  -- | Default implementation: `distribute = collect id`
-  distribute :: forall a g. (Functor g) => g (f a) -> f (g a)
-  -- | Default implementation: `collect f = distribute <<< map f`
-  collect :: forall a b g. (Functor g) => (a -> f b) -> g a -> f (g b)
-
--- | Zip an arbitrary collection of containers and summarize the results
-cotraverse :: forall a b f g. (Distributive f, Functor g) => (g a -> b) -> g (f a) -> f b
-cotraverse f = map f <<< distribute
+class Functor f <= Distributive f where
+  distribute :: forall a g. Functor g => g (f a) -> f (g a)
+  collect :: forall a b g. Functor g => (a -> f b) -> g a -> f (g b)
 
 instance distributiveIdentity :: Distributive Identity where
   distribute = Identity <<< map runIdentity
   collect f = Identity <<< map (runIdentity <<< f)
 
 instance distributiveFunction :: Distributive ((->) e) where
-  distribute a e = map ($ e) a
+  distribute a e = map (_ $ e) a
   collect f = distribute <<< map f
+
+-- | A default implementation of `distribute`, based on `collect`.
+distributeDefault
+  :: forall a f g
+   . (Distributive f, Functor g)
+  => g (f a)
+  -> f (g a)
+distributeDefault = collect id
+
+-- | A default implementation of `collect`, based on `distribute`.
+collectDefault
+  :: forall a b f g
+   . (Distributive f, Functor g)
+  => (a -> f b)
+  -> g a
+  -> f (g b)
+collectDefault f = distribute <<< map f
+
+-- | Zip an arbitrary collection of containers and summarize the results
+cotraverse
+  :: forall a b f g
+   . (Distributive f, Functor g)
+  => (g a -> b)
+  -> g (f a)
+  -> f b
+cotraverse f = map f <<< distribute
