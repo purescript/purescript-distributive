@@ -1,22 +1,23 @@
 module Data.Distributive where
 
-import Data.Function (id, ($), (<<<))
-import Data.Functor (class Functor, map)
-import Data.Identity (Identity(..), runIdentity)
+import Prelude
+
+import Data.Identity (Identity(..))
+import Data.Newtype (unwrap)
 
 -- | Categorical dual of `Traversable`:
 -- |
--- | - `distribute` is the dual of `sequence` - it zips an
--- |   arbitrary collection of containers
--- | - `collect` is the dual of `traverse` - it traverses
--- |   an arbitrary collection of values
+-- | - `distribute` is the dual of `sequence` - it zips an arbitrary collection
+-- |   of containers.
+-- | - `collect` is the dual of `traverse` - it traverses an arbitrary
+-- |   collection of values.
 class Functor f <= Distributive f where
   distribute :: forall a g. Functor g => g (f a) -> f (g a)
   collect :: forall a b g. Functor g => (a -> f b) -> g a -> f (g b)
 
 instance distributiveIdentity :: Distributive Identity where
-  distribute = Identity <<< map runIdentity
-  collect f = Identity <<< map (runIdentity <<< f)
+  distribute = Identity <<< map unwrap
+  collect f = Identity <<< map (unwrap <<< f)
 
 instance distributiveFunction :: Distributive ((->) e) where
   distribute a e = map (_ $ e) a
