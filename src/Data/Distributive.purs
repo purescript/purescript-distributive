@@ -26,7 +26,8 @@ instance distributiveFunction :: Distributive ((->) e) where
 -- | A default implementation of `distribute`, based on `collect`.
 distributeDefault
   :: forall a f g
-   . (Distributive f, Functor g)
+   . Distributive f
+  => Functor g
   => g (f a)
   -> f (g a)
 distributeDefault = collect id
@@ -34,7 +35,8 @@ distributeDefault = collect id
 -- | A default implementation of `collect`, based on `distribute`.
 collectDefault
   :: forall a b f g
-   . (Distributive f, Functor g)
+   . Distributive f
+  => Functor g
   => (a -> f b)
   -> g a
   -> f (g b)
@@ -43,7 +45,8 @@ collectDefault f = distribute <<< map f
 -- | Zip an arbitrary collection of containers and summarize the results
 cotraverse
   :: forall a b f g
-   . (Distributive f, Functor g)
+   . Distributive f
+  => Functor g
   => (g a -> b)
   -> g (f a)
   -> f b
