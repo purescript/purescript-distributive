@@ -22,6 +22,7 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-identity": "^3.0.0"
+    "purescript-identity": "^3.0.0",
+    "purescript-bifunctors": "^3.0.0"
   }
 }
