@@ -17,7 +17,7 @@ import Data.Newtype (unwrap)
 -- | - `distribute = collect id`
 -- | - `distribute <<< distribute = id`
 -- | - `collect f = distribute <<< map f`
--- | - `map f = runIdentity <<< collect (Identity <<< f)`
+-- | - `map f = unwrap <<< collect (Identity <<< f)`
 -- | - `map distribute <<< collect f = unwrap <<< collect (Compose <<< f)`
 class Functor f <= Distributive f where
   distribute :: forall a g. Functor g => g (f a) -> f (g a)
