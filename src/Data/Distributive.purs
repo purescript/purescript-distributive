@@ -11,6 +11,14 @@ import Data.Newtype (unwrap)
 -- |   of containers.
 -- | - `collect` is the dual of `traverse` - it traverses an arbitrary
 -- |   collection of values.
+-- |
+-- | Laws:
+-- |
+-- | - `distribute = collect id`
+-- | - `distribute <<< distribute = id`
+-- | - `collect f = distribute <<< map f`
+-- | - `map f = unwrap <<< collect (Identity <<< f)`
+-- | - `map distribute <<< collect f = unwrap <<< collect (Compose <<< f)`
 class Functor f <= Distributive f where
   distribute :: forall a g. Functor g => g (f a) -> f (g a)
   collect :: forall a b g. Functor g => (a -> f b) -> g a -> f (g b)
