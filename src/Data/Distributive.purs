@@ -14,8 +14,8 @@ import Data.Newtype (unwrap)
 -- |
 -- | Laws:
 -- |
--- | - `distribute = collect id`
--- | - `distribute <<< distribute = id`
+-- | - `distribute = collect identity`
+-- | - `distribute <<< distribute = identity`
 -- | - `collect f = distribute <<< map f`
 -- | - `map f = unwrap <<< collect (Identity <<< f)`
 -- | - `map distribute <<< collect f = unwrap <<< collect (Compose <<< f)`
@@ -38,7 +38,7 @@ distributeDefault
   => Functor g
   => g (f a)
   -> f (g a)
-distributeDefault = collect id
+distributeDefault = collect identity
 
 -- | A default implementation of `collect`, based on `distribute`.
 collectDefault
