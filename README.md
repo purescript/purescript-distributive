@@ -1,14 +1,14 @@
 # purescript-distributive
 
 [![Latest release](http://img.shields.io/github/release/purescript/purescript-distributive.svg)](https://github.com/purescript/purescript-distributive/releases)
-[![Build status](https://travis-ci.org/purescript/purescript-distributive.svg?branch=master)](https://travis-ci.org/purescript/purescript-distributive)
+[![Build status](https://github.com/purescript/purescript-distributive/workflows/CI/badge.svg?branch=master)](https://github.com/purescript/purescript-distributive/actions?query=workflow%3ACI+branch%3Amaster)
 
 Distributive typeclass - the categorical dual of `Traversable`.
 
 ## Installation
 
 ```
-bower install purescript-distributive
+spago install distributive
 ```
 
 ## Documentation
