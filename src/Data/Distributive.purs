@@ -4,6 +4,8 @@ import Prelude
 
 import Data.Identity (Identity(..))
 import Data.Newtype (unwrap)
+import Data.Tuple (Tuple(..), snd)
+import Type.Equality (class TypeEquals, from)
 
 -- | Categorical dual of `Traversable`:
 -- |
@@ -30,6 +32,10 @@ instance distributiveIdentity :: Distributive Identity where
 instance distributiveFunction :: Distributive ((->) e) where
   distribute a e = map (_ $ e) a
   collect f = distribute <<< map f
+
+instance distributiveTuple :: TypeEquals a Unit => Distributive (Tuple a) where
+  collect = collectDefault
+  distribute = Tuple (from unit) <<< map snd
 
 -- | A default implementation of `distribute`, based on `collect`.
 distributeDefault
