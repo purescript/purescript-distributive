@@ -14,6 +14,7 @@ Bugfixes:
 Other improvements:
   - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#14)
   - Added a CHANGELOG.md file and pull request template (#15, #16)
+  - This package now depends on the `purescript-tuples` and `purescript-type-equality` packages, and contains an instance previously in `purescript-tuples` (#17)
 
 ## [v4.0.0](https://github.com/purescript/purescript-distributive/releases/tag/v4.0.0) - 2018-05-23
 
