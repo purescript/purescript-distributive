@@ -21,10 +21,10 @@
     "package.json"
   ],
   "dependencies": {
-    "purescript-identity": "^5.0.0",
-    "purescript-newtype": "^4.0.0",
-    "purescript-prelude": "^5.0.0",
-    "purescript-tuples": "^6.0.0",
-    "purescript-type-equality": "^4.0.0"
+    "purescript-identity": "master",
+    "purescript-newtype": "master",
+    "purescript-prelude": "master",
+    "purescript-tuples": "master",
+    "purescript-type-equality": "master"
   }
 }
