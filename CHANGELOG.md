@@ -12,6 +12,8 @@ Bugfixes:
 
 Other improvements:
 
+- Migrate from Bower/Pulp to Spago and update CI and formatting tools.
+
 ## [v6.0.0](https://github.com/purescript/purescript-distributive/releases/tag/v6.0.0) - 2022-04-27
 
 Breaking changes:
@@ -89,6 +91,5 @@ Updated docs
 - Updated to use the new `Data.Identity` instead of relying on `purescript-transformers` (@joneshf)
 
 ## [v0.1.1](https://github.com/purescript/purescript-distributive/releases/tag/v0.1.1) - 2014-10-14
-
 
 
