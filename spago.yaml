@@ -1,5 +1,6 @@
 package:
   name: distributive
+  description: Distributive type class, the categorical dual of Traversable
   build:
     strict: true
     pedanticPackages: true
