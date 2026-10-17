@@ -2,7 +2,7 @@
 
 Notable changes to this project are documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [Unreleased](https://github.com/purescript/purescript-distributive/compare/v6.0.1...HEAD)
 
 Breaking changes:
 
@@ -12,9 +12,22 @@ Bugfixes:
 
 Other improvements:
 
+## [v6.0.1](https://github.com/purescript/purescript-distributive/releases/tag/v6.0.1) - 2026-10-17
+
+Breaking changes:
+
+New features:
+
+Bugfixes:
+
+Other improvements:
+
+- Migrate from Bower/Pulp to Spago and update CI and formatting tools (#21 by @thomashoneyman)
+
 ## [v6.0.0](https://github.com/purescript/purescript-distributive/releases/tag/v6.0.0) - 2022-04-27
 
 Breaking changes:
+
 - Update project and deps to PureScript v0.15.0 (#19 by @JordanMartinez)
 
 New features:
@@ -26,16 +39,18 @@ Other improvements:
 ## [v5.0.0](https://github.com/purescript/purescript-distributive/releases/tag/v5.0.0) - 2021-02-26
 
 Breaking changes:
-  - Added support for PureScript 0.14 and dropped support for all previous versions (#13)
+
+- Added support for PureScript 0.14 and dropped support for all previous versions (#13)
 
 New features:
 
 Bugfixes:
 
 Other improvements:
-  - Migrated CI to GitHub Actions and updated installation instructions to use Spago (#14)
-  - Added a CHANGELOG.md file and pull request template (#15, #16)
-  - This package now depends on the `purescript-tuples` and `purescript-type-equality` packages, and contains an instance previously in `purescript-tuples` (#17)
+
+- Migrated CI to GitHub Actions and updated installation instructions to use Spago (#14)
+- Added a CHANGELOG.md file and pull request template (#15, #16)
+- This package now depends on the `purescript-tuples` and `purescript-type-equality` packages, and contains an instance previously in `purescript-tuples` (#17)
 
 ## [v4.0.0](https://github.com/purescript/purescript-distributive/releases/tag/v4.0.0) - 2018-05-23
 
@@ -78,6 +93,7 @@ Updated docs
 ## [v0.4.0](https://github.com/purescript/purescript-distributive/releases/tag/v0.4.0) - 2015-02-21
 
 **This release requires PureScript v0.6.8 or later**
+
 - Updated dependencies
 
 ## [v0.3.0](https://github.com/purescript/purescript-distributive/releases/tag/v0.3.0) - 2015-01-10
@@ -89,6 +105,3 @@ Updated docs
 - Updated to use the new `Data.Identity` instead of relying on `purescript-transformers` (@joneshf)
 
 ## [v0.1.1](https://github.com/purescript/purescript-distributive/releases/tag/v0.1.1) - 2014-10-14
-
-
-
